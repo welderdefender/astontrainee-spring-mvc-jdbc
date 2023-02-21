@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Обновить код аэропорта</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/codes/{id}(id=${airportCodes.getAirportCodeId()})}" th:object="${airportCodes}">
+
+    <label for="airportCodeName">Имя: </label>
+    <input type="text" th:field="*{airportCodeName}" id="airportCodeName"/>
+
+    <br/>
+    <input type="submit" value="Обновить"/>
+</form>
+
+<br/>
+<hr/>
+<h3>Таблицы:</h3>
+<a href="/Spring-JDBC-CRUD/flights">Рейсы</a> <br/>
+<a href="/Spring-JDBC-CRUD/users">Пользователи</a><br/>
+<a href="/Spring-JDBC-CRUD/userflights">Many-to-many (Рейсы, Пользователи)</a><br/>
+<a href="/Spring-JDBC-CRUD/companies">Авиакомпании</a><br/>
+<a href="/Spring-JDBC-CRUD/codes">Коды аэропортов</a><br/>
+
+</body>
+</html>

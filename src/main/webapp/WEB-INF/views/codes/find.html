@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Код аэропорта</title>
+</head>
+<body>
+<p th:text="${airportCodes.getAirportCodeId()}">VALUE</p>
+<p th:text="${airportCodes.getAirportCodeName()}">VALUE</p>
+
+<a th:href="@{/codes/{id}/edit(id=${airportCodes.getAirportCodeId()})}">Редактировать</a>
+
+<form th:method="DELETE" th:action="@{/codes/{id}(id=${airportCodes.getAirportCodeId()})}">
+    <input type="submit" value="Удалить"/>
+</form>
+
+<br/>
+<hr/>
+<h3>Таблицы:</h3>
+<a href="/Spring-JDBC-CRUD/flights">Рейсы</a> <br/>
+<a href="/Spring-JDBC-CRUD/users">Пользователи</a><br/>
+<a href="/Spring-JDBC-CRUD/userflights">Many-to-many (Рейсы, Пользователи)</a><br/>
+<a href="/Spring-JDBC-CRUD/companies">Авиакомпании</a><br/>
+<a href="/Spring-JDBC-CRUD/codes">Коды аэропортов</a><br/>
+
+</body>
+</html>

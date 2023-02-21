@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список рейсов</title>
+</head>
+<body>
+
+<div th:each="flight : ${flights}">
+    <a th:href="@{/flights/{id}(id=${flight.getFlightId()})}"
+       th:text="${flight.getFlightId()} + '; ' + ${flight.getCompanyName()} + '; ' + ${flight.getAirportCodeName()} + '; '
+        + '(' + ${flight.getFlightDate()} + ')' + '; ' + ${flight.getFlightFrom()} + ' ---> ' + ${flight.getFlightTo()}">flight</a>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/Spring-JDBC-CRUD/flights/new">Создать новый рейс</a>
+
+<br/>
+<hr/>
+<h3>Таблицы:</h3>
+<a href="/Spring-JDBC-CRUD/flights">Рейсы</a> <br/>
+<a href="/Spring-JDBC-CRUD/users">Пользователи</a><br/>
+<a href="/Spring-JDBC-CRUD/userflights">Many-to-many (Рейсы, Пользователи)</a><br/>
+<a href="/Spring-JDBC-CRUD/companies">Авиакомпании</a><br/>
+<a href="/Spring-JDBC-CRUD/codes">Коды аэропортов</a><br/>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Новый код аэропорта</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/codes}" th:object="${airportCodes}">
+
+    <label for="airportCodeName">Код: </label>
+    <input type="text" th:field="*{airportCodeName}" id="airportCodeName"/>
+
+    <br/>
+    <input type="submit" value="Создать"/>
+</form>
+
+<br/>
+<hr/>
+<h3>Таблицы:</h3>
+<a href="/Spring-JDBC-CRUD/flights">Рейсы</a> <br/>
+<a href="/Spring-JDBC-CRUD/users">Пользователи</a><br/>
+<a href="/Spring-JDBC-CRUD/userflights">Many-to-many (Рейсы, Пользователи)</a><br/>
+<a href="/Spring-JDBC-CRUD/companies">Авиакомпании</a><br/>
+<a href="/Spring-JDBC-CRUD/codes">Коды аэропортов</a><br/>
+
+</body>
+</html>

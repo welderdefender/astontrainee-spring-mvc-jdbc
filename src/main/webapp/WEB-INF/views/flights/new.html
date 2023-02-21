@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Новый рейс</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/flights}" th:object="${flight}">
+
+  <label for="company">Авиакомпания: </label>
+  <input type="number" th:field="*{company}" id="company"/>
+
+  <label for="airportCode">Код аэропорта: </label>
+  <input type="number" th:field="*{airportCode}" id="airportCode"/>
+
+  <label for="flightDate">Дата и время рейса: </label>
+  <input type="text" th:field="*{flightDate}" id="flightDate"/>
+
+  <label for="flightFrom">Вылет из: </label>
+  <input type="text" th:field="*{flightFrom}" id="flightFrom"/>
+
+  <label for="flightTo">Прилёт в: </label>
+  <input type="text" th:field="*{flightTo}" id="flightTo"/>
+  <br/>
+  <input type="submit" value="Создать"/>
+</form>
+
+<br/>
+<hr/>
+<h3>Таблицы:</h3>
+<a href="/Spring-JDBC-CRUD/flights">Рейсы</a> <br/>
+<a href="/Spring-JDBC-CRUD/users">Пользователи</a><br/>
+<a href="/Spring-JDBC-CRUD/userflights">Many-to-many (Рейсы, Пользователи)</a><br/>
+<a href="/Spring-JDBC-CRUD/companies">Авиакомпании</a><br/>
+<a href="/Spring-JDBC-CRUD/codes">Коды аэропортов</a><br/>
+
+</body>
+</html>
