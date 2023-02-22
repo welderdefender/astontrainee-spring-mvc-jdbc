@@ -8,7 +8,7 @@
 
 <div th:each="flight : ${flights}">
     <a th:href="@{/flights/{id}(id=${flight.getFlightId()})}"
-       th:text="${flight.getFlightId()} + '; ' + ${flight.getCompanyName()} + '; ' + ${flight.getAirportCodeName()} + '; '
+       th:text="${flight.getFlightId()} + '; ' + 'Company: ' + ${flight.getCompany()} + '; ' + 'Airport code: ' + ${flight.getAirportCode()} + '; '
         + '(' + ${flight.getFlightDate()} + ')' + '; ' + ${flight.getFlightFrom()} + ' ---> ' + ${flight.getFlightTo()}">flight</a>
 </div>
 

@@ -32,18 +32,19 @@ public class FlightDAO {
         List<Flight> flightList = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
-            String SQL = "SELECT * FROM flights F " +
-                    "JOIN company C ON C.company_id = F.flight_id " +
-                    "JOIN airport_codes AC on AC.airport_code_id = F.flight_id";
+            String SQL = "SELECT * FROM flights";
+//                    " F " +
+//                    "JOIN company C ON C.company_id = F.flight_id " +
+//                    "JOIN airport_codes AC on AC.airport_code_id = F.flight_id";
             ResultSet resultSet = statement.executeQuery(SQL);
 
             while (resultSet.next()) {
                 Flight flight = new Flight();
                 flight.setFlightId(resultSet.getInt("flight_id"));
                 flight.setCompany(resultSet.getInt("company"));
-                flight.setCompanyName(resultSet.getString("name"));
+            //    flight.setCompanyName(resultSet.getString("name"));
                 flight.setAirportCode((resultSet.getInt("airport_code")));
-                flight.setAirportCodeName(resultSet.getString("airport_code_name"));
+            //    flight.setAirportCodeName(resultSet.getString("airport_code_name"));
                 flight.setFlightDate(resultSet.getString("flight_date"));
                 flight.setFlightFrom(resultSet.getString("flight_from"));
                 flight.setFlightTo(resultSet.getString("flight_to"));

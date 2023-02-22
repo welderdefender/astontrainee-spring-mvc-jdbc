@@ -13,7 +13,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="69aab71a-1a81-4ae4-b3af-dd06b2f9bbd5">
-      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[SELECT * from flights;]]></console>
+      <console name="Connection" type="STANDARD" schema="public" session="Main">SELECT * from flights;</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -24,6 +24,7 @@
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="69aab71a-1a81-4ae4-b3af-dd06b2f9bbd5" dataset="public.users_flights" active-filter-id="" />
+    <filter-actions connection-id="69aab71a-1a81-4ae4-b3af-dd06b2f9bbd5" dataset="public.airport_codes" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
